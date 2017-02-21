@@ -26,7 +26,6 @@ $.fn.binding = function(dfg){
 			})
 			$(this.ele).html(html);
 		}
-		$(this.ele).html(html);
 	}
 	/*处理绑定的元素*/
 	_binding.prototype.resolveEle = function(){
