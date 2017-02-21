@@ -20,9 +20,12 @@ $.fn.binding = function(dfg){
 		let html = $(this.ele).html(),
 			reg = new RegExp('{{(.*?)}}','gim'),
 			m = html.match(reg);
-		m.forEach(function(item,i){
-			html = html.replace(item,'<span b-text="'+item.replace('{{','').replace('}}','')+'"></span>');
-		})
+		if(m&&m.length>0){
+			m.forEach(function(item,i){
+				html = html.replace(item,'<span b-text="'+item.replace('{{','').replace('}}','')+'"></span>');
+			})
+			$(this.ele).html(html);
+		}
 		$(this.ele).html(html);
 	}
 	/*处理绑定的元素*/
